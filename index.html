@@ -1,122 +1,131 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>李卓桐|博士</title>
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            background: #f4f4f4;
+            color: #333;
         }
         .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
         }
-        h1, h2 {
-            color: #333;
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 20px;
+            min-height: 70px;
+            border-bottom: #77aadd 3px solid;
             text-align: center;
         }
-        p {
-            color: #555;
+        header h1 {
+            margin: 0;
+            padding-bottom: 10px;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .contact a {
-            display: inline-block;
-            margin: 5px;
-            text-decoration: none;
-            color: white;
-            background: #007bff;
-            padding: 8px 15px;
-            border-radius: 5px;
-        }
-        .section {
+        .content {
+            display: flex;
+            justify-content: space-between;
             margin-top: 20px;
         }
+        .profile {
+            flex: 1;
+            text-align: center;
+        }
+        .profile img {
+            width: 150px;
+            border-radius: 50%;
+        }
+        .info {
+            flex: 2;
+            padding: 20px;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        .language-switch {
+            text-align: right;
+            padding: 10px;
+        }
+        .language-switch button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
     </style>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+            });
+        }
+    </script>
 </head>
-<body>
-    <div class="container">
-        <h1>李卓桐 (Ph.D.)</h1>
-        <p style="text-align:center">博士 | 研究方向：XXXXXX</p>
-        <p style="text-align:center">Email: zhuotongli0516@outlook.com | GitHub: <a href="https://github.com/ZztLeo" target="_blank">Zzt-Leo</a></p>
-        
-        <div class="contact" style="text-align:center;">
-            <a href="https://scholar.google.com/citations?user=CAZeYAMAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a>
-            <a href="https://www.linkedin.com/in/XXXX" target="_blank">LinkedIn</a>
-            <a href="https://orcid.org/0000-0001-5182-0453" target="_blank">ORCID</a>
-        </div>
-
-        <div class="section">
-            <h2>教育背景</h2>
-            <ul>
-                <li><strong>博士：</strong> 北京邮电大学, 信息与通信工程, 2019-2024</li>
-                <li><strong>硕士：</strong> 北京邮电大学, 电子科学与技术, 2018-2019（硕博连读）</li>
-                <li><strong>本科：</strong> 西南交通大学, 通信工程, 2014-2018</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>研究方向</h2>
-            <ul>
-                <li>光骨干网</li>
-                <li>智算网络</li>
-                <li>集合通信库</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>发表论文</h2>
-            <ul>
-                <li>
-                    <strong>[论文标题1]</strong> - 会议/期刊, 20XX <br>
-                    <a href="https://doi.org/XXXX" target="_blank">DOI</a>
-                </li>
-                <li>
-                    <strong>[论文标题2]</strong> - 会议/期刊, 20XX <br>
-                    <a href="https://doi.org/XXXX" target="_blank">DOI</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>科研项目</h2>
-            <ul>
-                <li><strong>项目1：</strong> XXX (20XX-20XX) - 负责XXX</li>
-                <li><strong>项目2：</strong> XXX (20XX-20XX) - 负责XXX</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>学术服务</h2>
-            <ul>
-                <li>XXX 会议/期刊 审稿人</li>
-                <li>XXX 会议 组织者</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>技能</h2>
-            <ul>
-                <li>编程语言：Python, C++, Java</li>
-                <li>工具：TensorFlow, PyTorch, MPI, RoCE</li>
-                <li>其他：LaTeX, Git, Docker</li>
-            </ul>
-        </div>
-
+<body onload="switchLanguage('en')">
+    <div class="language-switch">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('zh')">中文</button>
     </div>
+    <header>
+        <h1>Your Name</h1>
+        <p data-lang="en">PhD Student | Researcher in [Your Field]</p>
+        <p data-lang="zh" style="display: none;">博士生 | 研究员（研究领域）</p>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <div class="profile">
+                <img src="profile.jpg" alt="Your Profile Picture">
+            </div>
+            <div class="info">
+                <h2 data-lang="en">About Me</h2>
+                <h2 data-lang="zh" style="display: none;">关于我</h2>
+                <p data-lang="en">Brief introduction about your research and interests.</p>
+                <p data-lang="zh" style="display: none;">关于您的研究和兴趣的简要介绍。</p>
+                
+                <h2 data-lang="en">Research & Projects</h2>
+                <h2 data-lang="zh" style="display: none;">研究与项目</h2>
+                <ul>
+                    <li data-lang="en">Project 1 - Description</li>
+                    <li data-lang="zh" style="display: none;">项目 1 - 描述</li>
+                    <li data-lang="en">Project 2 - Description</li>
+                    <li data-lang="zh" style="display: none;">项目 2 - 描述</li>
+                </ul>
+                
+                <h2 data-lang="en">Publications</h2>
+                <h2 data-lang="zh" style="display: none;">出版物</h2>
+                <ul>
+                    <li data-lang="en">Paper 1 - Citation</li>
+                    <li data-lang="zh" style="display: none;">论文 1 - 引用</li>
+                    <li data-lang="en">Paper 2 - Citation</li>
+                    <li data-lang="zh" style="display: none;">论文 2 - 引用</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p data-lang="en">Contact: your.email@example.com</p>
+        <p data-lang="zh" style="display: none;">联系: your.email@example.com</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
 </body>
 </html>
