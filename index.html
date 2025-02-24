@@ -7,65 +7,79 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
-            color: #333;
+            background: #1e2a38;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            width: 60%;
+            background: #2d3e50;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
         }
         header {
-            background: #35424a;
-            color: #ffffff;
-            padding-top: 20px;
-            min-height: 70px;
-            border-bottom: #77aadd 3px solid;
             text-align: center;
+            padding: 20px 0;
         }
         header h1 {
             margin: 0;
-            padding-bottom: 10px;
+            font-size: 2em;
         }
         .content {
             display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .profile {
-            flex: 1;
-            text-align: center;
+            flex-direction: column;
+            align-items: center;
         }
         .profile img {
             width: 150px;
             border-radius: 50%;
+            border: 3px solid #77aadd;
+            margin-bottom: 20px;
         }
         .info {
-            flex: 2;
-            padding: 20px;
-        }
-        footer {
-            background: #35424a;
-            color: #ffffff;
             text-align: center;
-            padding: 10px;
-            margin-top: 20px;
         }
-        .social-icons a {
-            color: white;
-            margin: 0 10px;
-            font-size: 20px;
+        .info h2 {
+            border-bottom: 2px solid #77aadd;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #44576d;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
         }
         .language-switch {
-            text-align: right;
-            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
         }
         .language-switch button {
-            padding: 5px 10px;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background: #77aadd;
+            color: #fff;
             cursor: pointer;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: #35424a;
+            width: 100%;
         }
     </style>
     <script>
@@ -81,14 +95,13 @@
         <button onclick="switchLanguage('en')">English</button>
         <button onclick="switchLanguage('zh')">中文</button>
     </div>
-    <header>
-        <h1 data-lang="en">Zhuotong Li</h1>
-        <h1 data-lang="zh" style="display: none;">李卓桐</h1>
-        <p data-lang="en">PhD Student | Researcher in [Your Field]</p>
-        <p data-lang="zh" style="display: none;">博士生 | 研究员（研究领域）</p>
-    </header>
-    
     <div class="container">
+        <header>
+            <h1 data-lang="en">Zhuotong Li</h1>
+            <h1 data-lang="zh" style="display: none;">李卓桐</h1>
+            <p data-lang="en">Ph.D. | Researcher in [Your Field]</p>
+            <p data-lang="zh" style="display: none;">博士 | 研究员（研究领域）</p>
+        </header>
         <div class="content">
             <div class="profile">
                 <img src="profile.jpg" alt="Your Profile Picture">
@@ -119,10 +132,9 @@
             </div>
         </div>
     </div>
-    
     <footer>
-        <p data-lang="en">Contact: zhuotongli0516@goutlook.com</p>
-        <p data-lang="zh" style="display: none;">联系: zhuotongli0516@goutlook.com/p>
+        <p data-lang="en">Contact: zhuotongli0516@outlook.com</p>
+        <p data-lang="zh" style="display: none;">联系: zhuotongli0516@outlook.com</p>
         <div class="social-icons">
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
